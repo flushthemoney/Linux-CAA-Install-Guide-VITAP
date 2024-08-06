@@ -1,6 +1,6 @@
 # Linux Sophos Client Installation Guide [VITAP]
 
-This is brief installation guide to anyone who's having difficulties setting up the Sophos Client Authentication Agent on Linux for the VIT-AP campus
+This is a brief installation guide to anyone who's having difficulties setting up the Sophos Client Authentication Agent on Linux for the VIT-AP campus
 
 **Note:** _Make sure you're logged in to the VIT-AP Hostel Network before beginning the installation_
 
@@ -36,30 +36,30 @@ Right-click and select extract after moving the .tar.gz file to the HOME directo
 
 ## Move the executable
 
-This step is going to place the executable file "caa" in a location of your choice on your system. The executable is currently located in the "bin" directory that was extracted. You can move it to any directory that's in your system's PATH
+This step is going to place the executable file "caa" in a location of your choice on the system. The executable is currently located in the "bin" directory that was extracted. You can move it to any directory that's in your system's PATH
 
 I'm moving the file to:
 
 - ~/.local/bin
 
-**NOTE** _: The following steps assume you have done the same_
-
-You can also choose to move it to some other location such as:
-
-- /usr/local/bin (system-wide, requires admin privileges)
-- ~/bin (user's personal bin directory)
-
 ```
 mv ~/bin/caa ~/.local/bin/
 ```
+
+The above step assumes you have done the same.
+
+**NOTE** _: You can also choose to move it to some other location such as:_
+
+- /usr/local/bin (system-wide, requires admin privileges)
+- ~/bin (user's personal bin directory)
 
 ## Calling from within ~/.bash_profile or .profile
 
 This step ensures that your shell can call and execute the "caa" command from anywhere
 
-_NOTE_ _: In case you have moved it to location that is already in your PATH (usr/local/bin), you can skip this step_
+**NOTE** : _In case you have moved it to a location that is already in your PATH (/usr/local/bin/), you can skip this step_
 
-If you have moved it to a custom directory then you will have to add that to directory to your PATH
+If you have moved it to a custom directory then you will have to add that directory to your PATH
 
 - Open ~/.bash_profile or ~/.profile via any text-editor of your choice, this can be done by:
 
@@ -97,7 +97,7 @@ Password: {Enter your password here}
 
 Save the file after entering your credentials
 
-- You should now be able to run this command from your terminal now:
+- You should now be able to run this command from your terminal:
 
 ```
 caa
@@ -118,6 +118,12 @@ Login was accepted.
 #### On Debian based systems:
 
 Open Startup Applications and add the caa command
+
+- You can stop the service using:
+
+```
+caa -s
+```
 
 <!-- #### Using systemd
 
